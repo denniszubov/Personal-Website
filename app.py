@@ -19,10 +19,23 @@ def home_page():
     based = "Atlanta, GA"
     languages = "English, French, Russian"
 
+    skills = [
+        {"skill": "Python", "level": 100},
+        {"skill": "C/C++", "level": 70},
+        {"skill": "Django", "level": 60},
+        {"skill": "Flask", "level": 60},
+    ]
+
+
     data["age"] = age
     data["email"] = email
     data["based"] = based
     data["languages"] = languages
+
+    data["skills"] = skills
+    data["len_skills"] = len(skills)
+
+    data["test"] = 'style="width: 60%;'
 
     return render_template("index.html", data=data)
 
