@@ -29,6 +29,13 @@ def home_page():
 
     year = date.today().year
 
+    links = {
+        "linkedin": "https://www.linkedin.com/in/dennis-zubov/",
+        "facebook": "https://www.facebook.com/dennis.zubovv/",
+        "github": "https://github.com/denniszubov",
+        "instagram": "https://www.instagram.com/dennis.zubov/",
+    }
+
     data["age"] = age
     data["email"] = email
     data["based"] = based
@@ -40,6 +47,8 @@ def home_page():
     data["test"] = 'style="width: 60%;'
 
     data["year"] = year
+
+    data["links"] = links
 
     return render_template("index.html", data=data)
 
