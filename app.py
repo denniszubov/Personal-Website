@@ -27,6 +27,7 @@ def home_page():
         {"skill": "Git", "level": 90},
     ]
 
+    year = date.today().year
 
     data["age"] = age
     data["email"] = email
@@ -37,6 +38,8 @@ def home_page():
     data["len_skills"] = len(skills)
 
     data["test"] = 'style="width: 60%;'
+
+    data["year"] = year
 
     return render_template("index.html", data=data)
 
