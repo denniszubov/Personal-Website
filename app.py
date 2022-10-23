@@ -1,8 +1,9 @@
-from flask import Flask, jsonify, abort, request, make_response, url_for, session
-from flask import render_template, redirect
+from flask import Flask, jsonify, abort, request, make_response, url_for, session, render_template, redirect, send_file
 from datetime import date
 
+
 app = Flask(__name__)
+
 
 def calculate_age(birthdate):
     # Calculate Age
@@ -51,6 +52,12 @@ def home_page():
     data["links"] = links
 
     return render_template("index.html", data=data)
+
+
+@app.route('/download', methods=['GET'])
+def download():
+    path = 'static/Dennis Zubov Resume.pdf'
+    return send_file(path, as_attachment=True)
 
 
 if __name__ == '__main__':
