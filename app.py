@@ -24,6 +24,7 @@ def home_page():
         {"skill": "C/C++", "level": 70},
         {"skill": "Django", "level": 60},
         {"skill": "Flask", "level": 60},
+        {"skill": "Git", "level": 90},
     ]
 
 
