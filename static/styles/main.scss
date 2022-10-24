@@ -176,11 +176,11 @@
 /* Footer */
 /* Social button style */
 .cc-linkedin:hover i {
-  color: #3197FF; 
+  color: #3197FF;
 }
 
 .cc-facebook:hover i {
-  color: #3b5998; 
+  color: #3b5998;
 }
 
 .cc-twitter:hover i {
@@ -212,5 +212,12 @@ a.credit {
   padding-bottom: 0;
 }
 
+.link-dark {
+  text-decoration: none;
+  color:rgb(107, 107, 107);
+}
 
-
+.link-dark:hover {
+  text-decoration: none;
+  color:rgb(19, 19, 19);
+}

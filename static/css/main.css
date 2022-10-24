@@ -6817,4 +6817,14 @@ a.credit {
   padding-bottom: 0;
 }
 
+.link-dark {
+  text-decoration: none;
+  color: rgb(107, 107, 107);
+}
+
+.link-dark:hover {
+  text-decoration: none;
+  color: rgb(19, 19, 19);
+}
+
 /*# sourceMappingURL=main.css.map */
