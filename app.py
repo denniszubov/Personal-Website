@@ -23,8 +23,13 @@ def home_page():
     skills = [
         {"skill": "Python", "level": 100},
         {"skill": "C/C++", "level": 70},
+        {"skill": "Java", "level": 70},
+        {"skill": "JavaScript", "level": 50},
+        {"skill": "SQL", "level": 80},
+        {"skill": "NoSQL Databases", "level": 60},
         {"skill": "Django", "level": 60},
         {"skill": "Flask", "level": 60},
+        {"skill": "AWS", "level": 50},
         {"skill": "Git", "level": 90},
     ]
 
