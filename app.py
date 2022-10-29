@@ -1,9 +1,18 @@
-from flask import Flask, jsonify, abort, request, make_response, url_for, session, render_template, redirect, send_file
+from flask import Flask, request, url_for, session, render_template, redirect, send_file, flash, request
+from flask_mail import Mail, Message
 from datetime import date
 
 
 app = Flask(__name__)
+mail = Mail(app)
 
+app.config["MAIL_SERVER"] = "***REMOVED***"
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = "***REMOVED***"
+app.config['MAIL_PASSWORD'] = '***REMOVED***'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
 
 def calculate_age(birthdate):
     # Calculate Age
@@ -12,8 +21,8 @@ def calculate_age(birthdate):
     age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
     return age
 
-@app.route('/', methods=['GET'])
-def home_page():
+
+def getHomePageData():
     data = {}
     age = calculate_age(date(year=2001, month=11, day=26))
     email = "***REMOVED***"
@@ -50,12 +59,25 @@ def home_page():
     data["skills"] = skills
     data["len_skills"] = len(skills)
 
-    data["test"] = 'style="width: 60%;'
-
     data["year"] = year
 
     data["links"] = links
 
+    return data
+
+
+def send_email(request):
+    msg = Message(f"Personal Website Message - Subject: {request.get('Subject')}", sender= "***REMOVED***", recipients=["***REMOVED***", "***REMOVED***"])
+    msg.body = f"Automated Message from denniszubov.com.\nSent by: {request.get('name')}\nReply to: {request.get('_replyto')}\n\nMessage:\n{request.get('message')}"
+    mail.send(msg)
+
+
+@app.route('/', methods=['GET', 'POST'])
+def home_page():
+    if request.method == "POST":
+        send_email(request.form)
+        return redirect("/")
+    data = getHomePageData()
     return render_template("index.html", data=data)
 
 
