@@ -1,4 +1,4 @@
-from flask import Flask, request, url_for, session, render_template, redirect, send_file, flash, request
+from flask import Flask, request, url_for, render_template, redirect, send_file, request
 from flask_mail import Mail, Message
 from datetime import date
 from env import DATA
