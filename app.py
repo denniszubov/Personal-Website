@@ -37,8 +37,15 @@ def getDynamicData(DATA):
 
 
 def send_email(request):
-    msg = Message(f"Personal Website Message - Subject: {request.get('Subject')}", sender= "***REMOVED***", recipients=["***REMOVED***", "***REMOVED***"])
-    msg.body = f"Automated Message from denniszubov.com.\nSent by: {request.get('name')}\nReply to: {request.get('_replyto')}\n\nMessage:\n{request.get('message')}"
+    subject = request.get('Subject')
+    sent_by = request.get('name')
+    reply_to = request.get('_replyto')
+    message_body = request.get('message')
+    # Implemented to fix bug where empty email was sent
+    if not subject or not sent_by or not reply_to or not message_body:
+        return
+    msg = Message(f"Personal Website Message - Subject: {subject}", sender= "***REMOVED***", recipients=["***REMOVED***", "***REMOVED***"])
+    msg.body = f"Automated Message from denniszubov.com.\nSent by: {sent_by}\nReply to: {reply_to}\n\nMessage:\n{message_body}"
     mail.send(msg)
 
 
@@ -58,4 +65,4 @@ def download():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=False, host="0.0.0.0", port=5000)
