@@ -1,6 +1,7 @@
 from flask import Flask, request, url_for, session, render_template, redirect, send_file, flash, request
 from flask_mail import Mail, Message
 from datetime import date
+from env import DATA
 
 
 app = Flask(__name__)
@@ -14,6 +15,7 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
+
 def calculate_age(birthdate):
     # Calculate Age
     today = date.today()
@@ -22,46 +24,14 @@ def calculate_age(birthdate):
     return age
 
 
-def getHomePageData():
-    data = {}
+def getDynamicData(DATA):
     age = calculate_age(date(year=2001, month=11, day=26))
-    email = "***REMOVED***"
-    based = "Atlanta, GA"
-    languages = "English, French, Russian"
-
-    skills = [
-        {"skill": "Python", "level": 100},
-        {"skill": "C/C++", "level": 70},
-        {"skill": "Java", "level": 70},
-        {"skill": "JavaScript", "level": 50},
-        {"skill": "SQL", "level": 80},
-        {"skill": "NoSQL Databases", "level": 60},
-        {"skill": "Django", "level": 60},
-        {"skill": "Flask", "level": 60},
-        {"skill": "AWS", "level": 50},
-        {"skill": "Git", "level": 90},
-    ]
-
     year = date.today().year
 
-    links = {
-        "linkedin": "https://www.linkedin.com/in/dennis-zubov/",
-        "facebook": "https://www.facebook.com/dennis.zubovv/",
-        "github": "https://github.com/denniszubov",
-        "instagram": "https://www.instagram.com/dennis.zubov/",
-    }
+    data = DATA
 
     data["age"] = age
-    data["email"] = email
-    data["based"] = based
-    data["languages"] = languages
-
-    data["skills"] = skills
-    data["len_skills"] = len(skills)
-
     data["year"] = year
-
-    data["links"] = links
 
     return data
 
@@ -77,7 +47,7 @@ def home_page():
     if request.method == "POST":
         send_email(request.form)
         return redirect("/")
-    data = getHomePageData()
+    data = getDynamicData(DATA)
     return render_template("index.html", data=data)
 
 
