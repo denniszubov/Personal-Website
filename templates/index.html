@@ -400,34 +400,34 @@
               <div class="h4 text-center title">Contact Me</div>
               <div class="row">
                 <div class="col-md-12">
-                  <div class="card-body">
-                    <form action="/" method="POST">
+                  <div class="card-body" id="form-div">
+                    <form action="/" method="POST" id="contact-form">
                       <div class="p pb-3"><strong>Feel free to contact me </strong></div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>
+                            <input id="form-name" class="form-control" type="text" name="form-name" placeholder="Name" required="required"/>
                           </div>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
-                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="required"/>
+                            <input id="form-subject" class="form-control" type="text" name="form-subject" placeholder="Subject" required="required"/>
                           </div>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input class="form-control" type="email" name="_replyto" placeholder="E-mail" required="required"/>
+                            <input id="form-replyto" class="form-control" type="email" name="form-replyto" placeholder="E-mail" required="required"/>
                           </div>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="form-group">
-                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
+                            <textarea id="form-message" class="form-control" name="form-message" placeholder="Your Message" required="required"></textarea>
                           </div>
                         </div>
                       </div>
@@ -465,5 +465,43 @@
     <script src="{{url_for('static', filename='js/now-ui-kit.js')}}"></script>
     <script src="{{url_for('static', filename='js/aos.js')}}"></script>
     <script src="{{url_for('static', filename='scripts/main.js')}}"></script>
+    <script type="text/javascript">
+      $(document).on('submit','#contact-form',function(e)
+                     {
+        console.log('Submitting form');
+        e.preventDefault();
+        $.ajax({
+          type:'POST',
+          url:'/',
+          data:{
+            name:$("#form-name").val(),
+            subject:$("#form-subject").val(),
+            replyto:$("#form-replyto").val(),
+            message:$("#form-message").val()
+          },
+          success:function()
+          {
+            let formElement = document.getElementById("form-div")
+
+            let successDiv = document.createElement("div")
+            successDiv.classList.add("alert")
+            successDiv.classList.add("alert-success")
+            successDiv.setAttribute("role", "alert")
+
+            let successText = document.createTextNode("Submitted Successfully! Thank you, " + $("#form-name").val() + ".")
+            successDiv.appendChild(successText)
+
+            // Add alert div to the top of the form
+            formElement.insertBefore(successDiv, formElement.firstChild)
+
+            // Clear the inputs for the form.
+            $("#form-name").val("")
+            $("#form-subject").val("")
+            $("#form-replyto").val("")
+            $("#form-message").val("")
+          }
+        })
+      });
+    </script>
   </body>
 </html>

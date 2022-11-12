@@ -37,9 +37,9 @@ def getDynamicData(DATA):
 
 
 def send_email(request):
-    subject = request.get('Subject')
+    subject = request.get('subject')
     sent_by = request.get('name')
-    reply_to = request.get('_replyto')
+    reply_to = request.get('replyto')
     message_body = request.get('message')
     # Implemented to fix bug where empty email was sent
     if not subject or not sent_by or not reply_to or not message_body:
@@ -51,10 +51,9 @@ def send_email(request):
 
 @app.route('/', methods=['GET', 'POST'])
 def home_page():
+    data = getDynamicData(DATA)
     if request.method == "POST":
         send_email(request.form)
-        return redirect("/")
-    data = getDynamicData(DATA)
     return render_template("index.html", data=data)
 
 
