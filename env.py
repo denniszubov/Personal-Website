@@ -1,8 +1,5 @@
 DATA = {}
 
-email = "***REMOVED***"
-based = "Atlanta, GA"
-languages = "English, French, Russian"
 skills = [
     {"skill": "Python", "level": 100},
     {"skill": "C/C++", "level": 70},
@@ -22,10 +19,6 @@ links = {
     "instagram": "https://www.instagram.com/dennis.zubov/",
 }
 
-
-DATA["email"] = email
-DATA["based"] = based
-DATA["languages"] = languages
 DATA["skills"] = skills
 DATA["len_skills"] = len(skills)
 DATA["links"] = links
