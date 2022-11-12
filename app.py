@@ -44,8 +44,8 @@ def send_email(request):
     # Implemented to fix bug where empty email was sent
     if not subject or not sent_by or not reply_to or not message_body:
         return
-    msg = Message(f"Personal Website Message - Subject: {subject}", sender= "***REMOVED***", recipients=["***REMOVED***", "***REMOVED***"])
-    msg.body = f"Automated Message from denniszubov.com.\nSent by: {sent_by}\nReply to: {reply_to}\n\nMessage:\n{message_body}"
+    msg = Message(f"denniszubov.com - Subject: {subject}", sender= "***REMOVED***", recipients=["***REMOVED***", "***REMOVED***"])
+    msg.body = f"Automated Message from denniszubov.com\nSent by: {sent_by}\nReply to: {reply_to}\n\nMessage:\n{message_body}"
     mail.send(msg)
 
 
