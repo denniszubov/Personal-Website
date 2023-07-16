@@ -17,6 +17,9 @@ links = {
     "facebook": "https://www.facebook.com/dennis.zubovv/",
     "github": "https://github.com/denniszubov",
     "instagram": "https://www.instagram.com/dennis.zubov/",
+    "georgia_tech": "https://www.linkedin.com/school/georgia-institute-of-technology/",
+    "pimco": "https://www.linkedin.com/company/pimco",
+    "jurumani_solutions": "https://www.linkedin.com/company/jurumani/",
 }
 
 DATA["skills"] = skills
