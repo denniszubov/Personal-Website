@@ -556,6 +556,19 @@
             $("#form-subject").val("")
             $("#form-replyto").val("")
             $("#form-message").val("")
+          },
+          error: function(xhr, status, error) {
+            let formElement = document.getElementById("form-div")
+
+            let errorDiv = document.createElement("div")
+            errorDiv.classList.add("alert")
+            errorDiv.classList.add("alert-danger")
+            errorDiv.setAttribute("role", "alert")
+
+            let errorText = document.createTextNode("Submission Failed. Please try again or contact me using LinkedIn.")
+            errorDiv.appendChild(errorText)
+
+            formElement.insertBefore(errorDiv, formElement.firstChild)
           }
         })
       });
