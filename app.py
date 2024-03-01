@@ -18,6 +18,11 @@ app.config["MAIL_USE_TLS"] = os.getenv("MAIL_USE_TLS").lower() in ("true", "1", 
 app.config["MAIL_USE_SSL"] = os.getenv("MAIL_USE_SSL").lower() in ("true", "1", "t")
 mail = Mail(app)
 
+sender = os.getenv("EMAIL_SENDER")
+recipient1 = os.getenv("EMAIL_RECIPIENT1")
+recipient2 = os.getenv("EMAIL_RECIPIENT2")
+recipients = [recipient1, recipient2]
+
 
 def send_email(request):
     subject = request.get('subject')
@@ -27,7 +32,7 @@ def send_email(request):
     # Implemented to fix bug where empty email was sent
     if not subject or not sent_by or not reply_to or not message_body:
         return
-    msg = Message(f"denniszubov.com - Subject: {subject}", sender= "***REMOVED***", recipients=["***REMOVED***", "***REMOVED***"])
+    msg = Message(f"denniszubov.com - Subject: {subject}", sender=sender, recipients=recipients)
     msg.body = f"Automated Message from denniszubov.com\nSent by: {sent_by}\nReply to: {reply_to}\n\nMessage:\n{message_body}"
     mail.send(msg)
 
