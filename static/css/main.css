@@ -5039,7 +5039,7 @@ Created using IcoMoon - icomoon.io
     height: 53px;
   }
   .sidebar-collapse .navbar .dropdown.show .dropdown-menu,
-.sidebar-collapse .navbar .dropdown .dropdown-menu {
+  .sidebar-collapse .navbar .dropdown .dropdown-menu {
     background-color: transparent;
     border: 0;
     transition: none;
@@ -5053,7 +5053,7 @@ Created using IcoMoon - icomoon.io
     overflow-y: scroll;
   }
   .sidebar-collapse .navbar .dropdown.show .dropdown-menu:before,
-.sidebar-collapse .navbar .dropdown .dropdown-menu:before {
+  .sidebar-collapse .navbar .dropdown .dropdown-menu:before {
     display: none;
   }
   .sidebar-collapse .navbar .dropdown .dropdown-item {
@@ -5066,7 +5066,7 @@ Created using IcoMoon - icomoon.io
     display: block;
   }
   .sidebar-collapse .navbar .dropdown-menu .dropdown-item:focus,
-.sidebar-collapse .navbar .dropdown-menu .dropdown-item:hover {
+  .sidebar-collapse .navbar .dropdown-menu .dropdown-item:hover {
     color: #FFFFFF;
   }
   .sidebar-collapse .navbar .navbar-translate {
@@ -5113,8 +5113,8 @@ Created using IcoMoon - icomoon.io
     margin-top: 5px;
   }
   .sidebar-collapse .bar1,
-.sidebar-collapse .bar2,
-.sidebar-collapse .bar3 {
+  .sidebar-collapse .bar2,
+  .sidebar-collapse .bar3 {
     outline: 1px solid transparent;
   }
   .sidebar-collapse .bar1 {
@@ -5473,7 +5473,7 @@ Created using IcoMoon - icomoon.io
     height: 53px;
   }
   .bootstrap-collapse .navbar .dropdown.show .dropdown-menu,
-.bootstrap-collapse .navbar .dropdown .dropdown-menu {
+  .bootstrap-collapse .navbar .dropdown .dropdown-menu {
     background-color: transparent;
     border: 0;
     transition: none;
@@ -5487,7 +5487,7 @@ Created using IcoMoon - icomoon.io
     overflow-y: scroll;
   }
   .bootstrap-collapse .navbar .dropdown.show .dropdown-menu:before,
-.bootstrap-collapse .navbar .dropdown .dropdown-menu:before {
+  .bootstrap-collapse .navbar .dropdown .dropdown-menu:before {
     display: none;
   }
   .bootstrap-collapse .navbar .dropdown .dropdown-item {
@@ -5500,7 +5500,7 @@ Created using IcoMoon - icomoon.io
     display: block;
   }
   .bootstrap-collapse .navbar .dropdown-menu .dropdown-item:focus,
-.bootstrap-collapse .navbar .dropdown-menu .dropdown-item:hover {
+  .bootstrap-collapse .navbar .dropdown-menu .dropdown-item:hover {
     color: #FFFFFF;
   }
   .bootstrap-collapse .navbar .navbar-translate {
@@ -5547,8 +5547,8 @@ Created using IcoMoon - icomoon.io
     margin-top: 5px;
   }
   .bootstrap-collapse .bar1,
-.bootstrap-collapse .bar2,
-.bootstrap-collapse .bar3 {
+  .bootstrap-collapse .bar2,
+  .bootstrap-collapse .bar3 {
     outline: 1px solid transparent;
   }
   .bootstrap-collapse .bar1 {
@@ -5825,7 +5825,7 @@ Created using IcoMoon - icomoon.io
     margin-top: 65px;
   }
   .navbar-nav .nav-link i.fa,
-.navbar-nav .nav-link i.now-ui-icons {
+  .navbar-nav .nav-link i.now-ui-icons {
     opacity: 0.5;
   }
   .section-images {
@@ -5911,7 +5911,7 @@ Created using IcoMoon - icomoon.io
     height: 53px;
   }
   .burger-menu .navbar .dropdown.show .dropdown-menu,
-.burger-menu .navbar .dropdown .dropdown-menu {
+  .burger-menu .navbar .dropdown .dropdown-menu {
     background-color: transparent;
     border: 0;
     transition: none;
@@ -5925,7 +5925,7 @@ Created using IcoMoon - icomoon.io
     overflow-y: scroll;
   }
   .burger-menu .navbar .dropdown.show .dropdown-menu:before,
-.burger-menu .navbar .dropdown .dropdown-menu:before {
+  .burger-menu .navbar .dropdown .dropdown-menu:before {
     display: none;
   }
   .burger-menu .navbar .dropdown .dropdown-item {
@@ -5938,7 +5938,7 @@ Created using IcoMoon - icomoon.io
     display: block;
   }
   .burger-menu .navbar .dropdown-menu .dropdown-item:focus,
-.burger-menu .navbar .dropdown-menu .dropdown-item:hover {
+  .burger-menu .navbar .dropdown-menu .dropdown-item:hover {
     color: #FFFFFF;
   }
   .burger-menu .navbar .navbar-translate {
@@ -5985,8 +5985,8 @@ Created using IcoMoon - icomoon.io
     margin-top: 5px;
   }
   .burger-menu .bar1,
-.burger-menu .bar2,
-.burger-menu .bar3 {
+  .burger-menu .bar2,
+  .burger-menu .bar3 {
     outline: 1px solid transparent;
   }
   .burger-menu .bar1 {
@@ -6470,8 +6470,8 @@ Created using IcoMoon - icomoon.io
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .section-images .hero-images-container,
-.section-images .hero-images-container-1,
-.section-images .hero-images-container-2 {
+  .section-images .hero-images-container-1,
+  .section-images .hero-images-container-2 {
     margin-top: -15vh;
     margin-left: 80px;
   }
@@ -6836,6 +6836,11 @@ a.credit {
 
 .bg-gray {
   background-color: #454545;
+}
+
+.form-control::placeholder {
+  color: #555;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */

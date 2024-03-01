@@ -225,3 +225,10 @@ a.credit {
 .bg-gray {
   background-color: #454545;
 }
+
+.form-control {
+  &::placeholder {
+    color: #555; // Darker shade of gray
+    opacity: 1; // Full opacity
+  }
+}
