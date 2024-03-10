@@ -6,11 +6,12 @@ skills = [
     {"skill": "Java", "level": 70},
     {"skill": "JavaScript", "level": 50},
     {"skill": "SQL", "level": 80},
-    {"skill": "NoSQL Databases", "level": 60},
-    {"skill": "Django", "level": 60},
+    {"skill": "NoSQL Databases", "level": 50},
+    {"skill": "Django", "level": 80},
     {"skill": "Flask", "level": 60},
-    {"skill": "AWS", "level": 60},
+    {"skill": "AWS", "level": 70},
     {"skill": "Git", "level": 90},
+    {"skill": "Supervised ML", "level": 50},
 ]
 links = {
     "linkedin": "https://www.linkedin.com/in/dennis-zubov/",
