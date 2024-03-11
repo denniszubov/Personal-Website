@@ -40,7 +40,8 @@
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#education">Education</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Projects</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#certifications">Certifications</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#leadership-and-extra-curriculars">Involvement</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#reference">References</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
@@ -61,7 +62,7 @@
       <div class="page-header-image" data-parallax="true" style="background-image: url('static/images/central_park.jpg')"></div>
       <div class="container">
         <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="{{ url_for('static',filename='images/head_shot.jpeg')}}" alt="Dennis Zubov Head Shot"/></a></div>
+          <div class="cc-profile-image"><a href="#"><img src="{{ url_for('static',filename='images/head_shot.jpg')}}" alt="Dennis Zubov Head Shot"/></a></div>
           <div class="h2 title">Dennis Zubov</div>
           <p class="category text-white">Development, Engineering, Finance</p>
           <a class="btn btn-primary" href="{{ url_for('download') }}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Resume</a>
@@ -264,8 +265,66 @@
   </div>
 </div>
 
+<!-- Certifications Section -->
+<div class="section" id="certifications">
+  <div class="container cc-experience">
+    <div class="h4 text-center mb-4 title">Certifications</div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <a href="{{ data.links.coursera }}" target="_blank"><img src="{{ url_for('static',filename='images/coursera_logo.jpeg')}}" alt="Coursera Logo"/></a>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Advanced Learning Algorithms</div>
+            <p class="category">Completed Feb 2024</p>
+            <p><a class="link-primary" href="{{ data.links.advanced_learning_algos }}" target="_blank"><b>View certification</b></a></p>
+            <p>Contents: Neural Networks, ML Best Practices, Multiclass Classification, Decision Trees, Random Forests</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <a href="{{ data.links.coursera }}" target="_blank"><img src="{{ url_for('static',filename='images/coursera_logo.jpeg')}}" alt="Coursera Logo"/></a>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Supervised Machine Learning: Regression and Classification</div>
+            <p class="category">Completed Jan 2024</p>
+            <p><a class="link-primary" href="{{ data.links.supervised_ml }}" target="_blank"><b>View certification</b></a></p>
+            <p>Contents: Linear Regression, Logistic Regression</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <a href="{{ data.links.bloomberg_lp }}" target="_blank"><img src="{{ url_for('static',filename='images/bloomberg_lp_logo.jpeg')}}" alt="Bloomberg LP Logo"/></a>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Bloomberg Market Concepts</div>
+            <p class="category">Completed Nov 2022</p>
+            <p><a class="link-primary" href="{{ data.links.bmc_certification }}" target="_blank"><b>View certification</b></a></p>
+            <p>Contents: Economic Indicators, Fixed Income, Equities, Currencies, Commodities, Fundamental Analysis, Financial Markets, Risk Management, Bloomberg Terminal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Projects Section -->
-<div class="section" id="portfolio">
+<div class="section" id="projects">
   <div class="container">
     <div class="row">
       <div class="col-md-6 ml-auto mr-auto">
