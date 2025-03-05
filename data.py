@@ -1,17 +1,22 @@
 DATA = {}
 
 skills = [
-    {"skill": "Python", "level": 100},
-    {"skill": "C/C++", "level": 70},
-    {"skill": "Java", "level": 70},
-    {"skill": "JavaScript", "level": 50},
-    {"skill": "SQL", "level": 80},
-    {"skill": "NoSQL Databases", "level": 50},
-    {"skill": "Django", "level": 80},
-    {"skill": "Flask", "level": 60},
-    {"skill": "AWS", "level": 70},
-    {"skill": "Git", "level": 90},
-    {"skill": "Supervised ML", "level": 50},
+    "Python",
+    "Java",
+    "Algorithmic Trading",
+    "C",
+    "C++",
+    "Git",
+    "CI/CD",
+    "Computer Architecture",
+    "AWS",
+    "JavaScript",
+    "TypeScript",
+    "SQL",
+    "Django",
+    "Flask",
+    "Supervised ML",
+    "Product Demos",
 ]
 links = {
     "linkedin": "https://www.linkedin.com/in/dennis-zubov/",

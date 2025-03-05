@@ -90,7 +90,7 @@
           <div class="card-body">
             <div class="h4 mt-0 title">About</div>
             <p>Hello! I am Dennis Zubov. Interested in Development, Engineering and Finance.</p>
-            <p>In my free time, I enjoy playing soccer, chess, and reading books. I enjoy solving challening problems using my engineering and programming skills. Born and raised in South Africa, currently studying at Georgia Tech in Atlanta, USA. Please download my resume if you would like more information about my qualifications and experience!</p>
+            <p>In my free time, I enjoy playing soccer, chess, and reading books. I enjoy solving challening problems using my engineering and programming skills. Born and raised in South Africa, graduated from Georgia Tech in Atlanta, currently working in New York City. Please download my resume if you would like more information about my qualifications and experience!</p>
           </div>
         </div>
         <div class="col-lg-6 col-md-12">
@@ -180,30 +180,36 @@
     <div class="h4 text-center mb-4 title">Skills</div>
     <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="card-body">
-        {% for i in range(0, data.len_skills, 2) %}
-          <div class="row">
-            <div class="col-md-6">
-              <div class="progress-container progress-primary"><span class="progress-badge">{{ data.skills[i].skill }}</span>
-                <div class="progress">
-                  <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ data.skills[i].level }}%;"></div><span class="progress-value">{{ data.skills[i].level }}%</span>
-                </div>
-              </div>
-            </div>
-            {% if (i + 1) < data.len_skills %}
-              <div class="col-md-6">
-                <div class="progress-container progress-primary"><span class="progress-badge">{{ data.skills[i+1].skill }}</span>
-                  <div class="progress">
-                    <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{ data.skills[i+1].level }}%;"></div><span class="progress-value">{{ data.skills[i+1].level }}%</span>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
+        <div class="text-center">
+          {% for skill in data.skills %}
+            <span class="badge rounded-pill bg-primary m-2 p-2">
+              {{ skill }}
+            </span>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+.badge {
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .badge {
+    font-size: 0.9rem;
+  }
+}
+</style>
 
 <!-- Experience Section -->
 <div class="section" id="experience">
@@ -218,9 +224,9 @@
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Software Engineer</div>
+            <div class="h5">Quant Developer</div>
             <p class="category">PIMCO<br>New York, NY<br>2024, Aug - Present</p>
-            <p>Working on the Systematic Trading team.</p>
+            <p>Systematic Trading</p>
           </div>
         </div>
       </div>
