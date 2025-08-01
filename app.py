@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_file, request
+from flask import Flask, request, render_template, request
 from flask_mail import Mail, Message
 from helpers import getDynamicData
 from dotenv import load_dotenv
@@ -43,12 +43,6 @@ def home_page():
     if request.method == "POST":
         send_email(request.form)
     return render_template("index.html", data=data)
-
-
-@app.route('/download', methods=['GET'])
-def download():
-    path = 'static/Dennis Zubov Resume.pdf'
-    return send_file(path, as_attachment=True)
 
 
 if __name__ == '__main__':

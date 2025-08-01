@@ -70,6 +70,19 @@
   margin-right: 8px;
 }
 
+/* Contact Button Style */
+.btn-contact {
+  min-width: 200px;
+  padding: 12px 24px;
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    min-width: 180px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
 /* Professional Skills Style */
 .progress-container {
   margin-bottom: 20px;
