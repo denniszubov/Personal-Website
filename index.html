@@ -8,9 +8,9 @@
     <meta name="description" content="My name is Dennis Zubov - Development, Engineering, Finance. This is my Personal Portfolio Website with my Skills, Experience, and Projects.">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link rel= "stylesheet" href= "{{ url_for('static',filename='css/aos.css') }}">
-    <link rel= "stylesheet" href= "{{ url_for('static',filename='css/bootstrap.min.css')}}">
-    <link rel= "stylesheet" href= "{{ url_for('static',filename='css/main.css')}}">
+    <link rel="stylesheet" href="static/css/aos.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/main.css">
     <noscript>
       <style type="text/css">
         [data-aos] {
@@ -19,14 +19,14 @@
         }
       </style>
     </noscript>
-    <link rel="apple-touch-icon" sizes="180x180" href="f{{ url_for('static',filename='favicon/apple-touch-icon.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',filename='favicon/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',filename='favicon/favicon-16x16.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
   </head>
   <body id="top">
 
-    <!-- Navbad Section -->
+    <!-- Navbar Section -->
     <header>
       <div class="profile-page sidebar-collapse">
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-gray" color-on-scroll="400">
@@ -59,17 +59,17 @@
       <div class="page-header-image" data-parallax="true" style="background-image: url('static/images/central_park.jpg')"></div>
       <div class="container">
         <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="{{ url_for('static',filename='images/head_shot.jpg')}}" alt="Dennis Zubov Head Shot"/></a></div>
+          <div class="cc-profile-image"><a href="#"><img src="static/images/head_shot.jpg" alt="Dennis Zubov Head Shot"/></a></div>
           <div class="h2 title">Dennis Zubov</div>
           <p class="category text-white">Development, Engineering, Finance</p>
-          <a class="btn btn-primary btn-contact" href="{{ data.links.linkedin }}" target="_blank" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Message on LinkedIn</a>
+          <a class="btn btn-primary btn-contact" href="https://www.linkedin.com/in/dennis-zubov/" target="_blank" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Message on LinkedIn</a>
         </div>
       </div>
       <div class="section">
         <div class="container">
           <div class="button-container">
-            <a class="btn btn-default btn-round btn-lg btn-icon" href="{{ data.links.linkedin }}" rel="tooltip" title="Follow me on Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a class="btn btn-default btn-round btn-lg btn-icon" href="{{ data.links.github }}" rel="tooltip" title="Follow me on GitHub" target="_blank"><i class="fa fa-github"></i></a></div>
+            <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.linkedin.com/in/dennis-zubov/" rel="tooltip" title="Follow me on Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a class="btn btn-default btn-round btn-lg btn-icon" href="https://github.com/denniszubov" rel="tooltip" title="Follow me on GitHub" target="_blank"><i class="fa fa-github"></i></a></div>
         </div>
       </div>
     </div>
@@ -93,7 +93,7 @@
             <div class="h4 mt-0 title">Basic Information</div>
             <div class="row">
               <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-              <div class="col-sm-8">{{ data.age }}</div>
+              <div class="col-sm-8"><span id="age"></span></div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Job Interests:</strong></div>
@@ -125,8 +125,8 @@
     <div class="card">
       <div class="row">
         <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header"> 
-            <img src="{{ url_for('static',filename='images/gt_logo.jpeg')}}" alt="Georgia Tech Logo"/>
+          <div class="card-body cc-education-header">
+            <img src="static/images/gt_logo.jpeg" alt="Georgia Tech Logo"/>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
@@ -148,7 +148,7 @@
       <div class="row">
         <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <img src="{{ url_for('static',filename='images/gtl_logo.jpeg')}}" alt="Georgia Tech Lorrain Logo"/>
+            <img src="static/images/gtl_logo.jpeg" alt="Georgia Tech Lorrain Logo"/>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
@@ -176,11 +176,22 @@
     <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="card-body">
         <div class="text-center">
-          {% for skill in data.skills %}
-            <span class="badge rounded-pill bg-primary m-2 p-2">
-              {{ skill }}
-            </span>
-          {% endfor %}
+          <span class="badge rounded-pill bg-primary m-2 p-2">Python</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">Java</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">Algorithmic Trading</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">C</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">C++</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">Git</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">CI/CD</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">Computer Architecture</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">AWS</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">JavaScript</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">TypeScript</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">SQL</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">Django</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">Flask</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">Supervised ML</span>
+          <span class="badge rounded-pill bg-primary m-2 p-2">Product Demos</span>
         </div>
       </div>
     </div>
@@ -214,7 +225,7 @@
       <div class="row">
         <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <a href="{{ data.links.pimco }}" target="_blank"><img src="{{ url_for('static',filename='images/pimco_logo.jpeg')}}" alt="PIMCO Logo"/></a>
+            <a href="https://www.linkedin.com/company/pimco" target="_blank"><img src="static/images/pimco_logo.jpeg" alt="PIMCO Logo"/></a>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
@@ -230,7 +241,7 @@
       <div class="row">
         <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <a href="{{ data.links.georgia_tech }}" target="_blank"><img src="{{ url_for('static',filename='images/gt_logo.jpeg')}}" alt="Georgia Tech Logo"/></a>
+            <a href="https://www.linkedin.com/school/georgia-institute-of-technology/" target="_blank"><img src="static/images/gt_logo.jpeg" alt="Georgia Tech Logo"/></a>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
@@ -248,7 +259,7 @@
       <div class="row">
         <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <a href="{{ data.links.pimco }}" target="_blank"><img src="{{ url_for('static',filename='images/pimco_logo.jpeg')}}" alt="PIMCO Logo"/></a>
+            <a href="https://www.linkedin.com/company/pimco" target="_blank"><img src="static/images/pimco_logo.jpeg" alt="PIMCO Logo"/></a>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
@@ -264,7 +275,7 @@
       <div class="row">
         <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <a href="{{ data.links.jurumani_solutions }}" target="_blank"><img src="{{ url_for('static',filename='images/jurumani_solutions_logo.jpeg')}}" alt="Jurumani Solutions Logo"/></a>
+            <a href="https://www.linkedin.com/company/jurumani/" target="_blank"><img src="static/images/jurumani_solutions_logo.jpeg" alt="Jurumani Solutions Logo"/></a>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
@@ -288,14 +299,14 @@
       <div class="row">
         <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <a href="{{ data.links.coursera }}" target="_blank"><img src="{{ url_for('static',filename='images/coursera_logo.jpeg')}}" alt="Coursera Logo"/></a>
+            <a href="https://www.coursera.org" target="_blank"><img src="static/images/coursera_logo.jpeg" alt="Coursera Logo"/></a>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
             <div class="h5">Advanced Learning Algorithms</div>
             <p class="category">Completed Feb 2024</p>
-            <p><a class="link-primary" href="{{ data.links.advanced_learning_algos }}" target="_blank"><b>View certification</b></a></p>
+            <p><a class="link-primary" href="https://www.coursera.org/account/accomplishments/certificate/5UQ44RKC4JQV" target="_blank"><b>View certification</b></a></p>
             <p>Contents: Neural Networks, ML Best Practices, Multiclass Classification, Decision Trees, Random Forests</p>
           </div>
         </div>
@@ -305,14 +316,14 @@
       <div class="row">
         <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <a href="{{ data.links.coursera }}" target="_blank"><img src="{{ url_for('static',filename='images/coursera_logo.jpeg')}}" alt="Coursera Logo"/></a>
+            <a href="https://www.coursera.org" target="_blank"><img src="static/images/coursera_logo.jpeg" alt="Coursera Logo"/></a>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
             <div class="h5">Supervised Machine Learning: Regression and Classification</div>
             <p class="category">Completed Jan 2024</p>
-            <p><a class="link-primary" href="{{ data.links.supervised_ml }}" target="_blank"><b>View certification</b></a></p>
+            <p><a class="link-primary" href="https://www.coursera.org/account/accomplishments/certificate/SVGVFVB443MZ" target="_blank"><b>View certification</b></a></p>
             <p>Contents: Linear Regression, Logistic Regression</p>
           </div>
         </div>
@@ -322,14 +333,14 @@
       <div class="row">
         <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <a href="{{ data.links.bloomberg_lp }}" target="_blank"><img src="{{ url_for('static',filename='images/bloomberg_lp_logo.jpeg')}}" alt="Bloomberg LP Logo"/></a>
+            <a href="https://www.bloomberg.com" target="_blank"><img src="static/images/bloomberg_lp_logo.jpeg" alt="Bloomberg LP Logo"/></a>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
             <div class="h5">Bloomberg Market Concepts</div>
             <p class="category">Completed Nov 2022</p>
-            <p><a class="link-primary" href="{{ data.links.bmc_certification }}" target="_blank"><b>View certification</b></a></p>
+            <p><a class="link-primary" href="https://portal.bloombergforeducation.com/certificates/EAguZiFXcX6e1y2aaUSeAANG" target="_blank"><b>View certification</b></a></p>
             <p>Contents: Economic Indicators, Fixed Income, Equities, Currencies, Commodities, Fundamental Analysis, Financial Markets, Risk Management, Bloomberg Terminal</p>
           </div>
         </div>
@@ -356,7 +367,7 @@
                 <div class="card-body">
                   <div class="h5 text-center">Photo Gallery</div>
                   <div class="cc-porfolio-image img-raised">
-                    <figure class="cc-effect"><img src="{{ url_for('static',filename='images/project-photo_gallery.png')}}" alt="Project - Photo Gallery"/>
+                    <figure class="cc-effect"><img src="static/images/project-photo_gallery.png" alt="Project - Photo Gallery"/>
                       <figcaption>
                         <br>
                         <p>I built a photo gallery web application where you have to create an account to view the public repository of albums and photos. Any user can create albums and add photos to them. The albums/photos can be updated and deleted.
@@ -372,7 +383,7 @@
                 <div class="card-body">
                   <div class="h5 text-center">Music Blog</div>
                   <div class="cc-porfolio-image img-raised">
-                    <figure class="cc-effect"><img src="{{ url_for('static',filename='images/project-music_blog.png')}}" alt="Project - Music Blog"/>
+                    <figure class="cc-effect"><img src="static/images/project-music_blog.png" alt="Project - Music Blog"/>
                       <figcaption>
                         <br>
                         <p>I built a music blog which allows users to create and upload blog posts and also music files. The web application has full user profile management including profile photos. I built this web application using Python and Django.</p>
@@ -389,7 +400,7 @@
                 <div class="card-body">
                   <div class="h5 text-center">RPG Quest Video Game</div>
                   <div class="cc-porfolio-image img-raised">
-                    <figure class="cc-effect"><img src="{{ url_for('static',filename='images/project-rpg_video_game.png')}}" alt="Project - RPG Video Game"/>
+                    <figure class="cc-effect"><img src="static/images/project-rpg_video_game.png" alt="Project - RPG Video Game"/>
                       <figcaption>
                         <br>
                         <p>I built a top-down video game using four action button on a bread board with an accelerometer for character movement. I used an LCD screen to display the video game.
@@ -405,7 +416,7 @@
                 <div class="card-body">
                   <div class="h5 text-center">Truth Table Generator</div>
                   <div class="cc-porfolio-image img-raised">
-                    <figure class="cc-effect"><img src="{{ url_for('static',filename='images/project-truth_table_generator.png')}}" alt="Project - Truth Table Generator"/>
+                    <figure class="cc-effect"><img src="static/images/project-truth_table_generator.png" alt="Project - Truth Table Generator"/>
                       <figcaption>
                         <br>
                         <p>I built a truth table generator to help me with checking my homework and with studying for my electrical engineering classes. You enter a boolean function with any variables A-Z and it outputs a dynamically sized truth table with all the true and false permutations that are possible.
@@ -433,18 +444,18 @@
     <!-- Footer Section -->
     <footer class="footer">
       <div class="container text-center">
-        <a class="cc-linkedin btn btn-link" href="{{ data.links.linkedin }}" target="_blank"><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a>
-        <a class="cc-github btn btn-link" href="{{ data.links.github }}" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></div>
+        <a class="cc-linkedin btn btn-link" href="https://www.linkedin.com/in/dennis-zubov/" target="_blank"><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a>
+        <a class="cc-github btn btn-link" href="https://github.com/denniszubov" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></div>
       <div class="h4 title text-center">Dennis Zubov</div>
       <div class="text-center text-muted">
-        <p>&copy; Copyright 2022 - {{ data.year }}</p>
+        <p>&copy; Copyright 2022 - <span id="year"></span></p>
       </div>
     </footer>
-    <script src="{{url_for('static', filename='js/core/jquery.3.2.1.min.js')}}"></script>
-    <script src="{{url_for('static', filename='js/core/popper.min.js')}}"></script>
-    <script src="{{url_for('static', filename='js/core/bootstrap.min.js')}}"></script>
-    <script src="{{url_for('static', filename='js/now-ui-kit.js')}}"></script>
-    <script src="{{url_for('static', filename='js/aos.js')}}"></script>
-    <script src="{{url_for('static', filename='scripts/main.js')}}"></script>
+    <script src="static/js/core/jquery.3.2.1.min.js"></script>
+    <script src="static/js/core/popper.min.js"></script>
+    <script src="static/js/core/bootstrap.min.js"></script>
+    <script src="static/js/now-ui-kit.js"></script>
+    <script src="static/js/aos.js"></script>
+    <script src="static/scripts/main.js"></script>
   </body>
 </html>
