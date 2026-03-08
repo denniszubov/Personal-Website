@@ -164,21 +164,24 @@ function renderProjects(projects) {
   var html = '';
   projects.forEach(function(proj, i) {
     var delay = i * 100;
-    // Alternate columns: even index = left col, odd = right col
-    if (i % 2 === 0) html += '<div class="col-md-6">';
+    var linksHtml = '';
+    if (proj.links && proj.links.length > 0) {
+      linksHtml = '<div class="project-links">';
+      proj.links.forEach(function(link) {
+        linksHtml += '<a href="' + link.url + '" target="_blank" class="btn btn-default btn-sm">' + link.label + '</a> ';
+      });
+      linksHtml += '</div>';
+    }
     html +=
-      '<div class="card" data-aos="fade-up" data-aos-delay="' + delay + '">' +
-        '<div class="card-body">' +
-          '<div class="h5 text-center">' + proj.title + '</div>' +
-          '<div class="cc-porfolio-image img-raised">' +
-            '<figure class="cc-effect">' +
-              '<img src="' + proj.image + '" alt="' + proj.imageAlt + '"/>' +
-              '<figcaption><br><p>' + proj.description + '</p></figcaption>' +
-            '</figure>' +
+      '<div class="col-md-6">' +
+        '<div class="card" data-aos="fade-up" data-aos-delay="' + delay + '">' +
+          '<div class="card-body text-center">' +
+            '<div class="h5">' + proj.title + '</div>' +
+            '<img class="project-image img-raised" src="' + proj.image + '" alt="' + proj.imageAlt + '"/>' +
+            linksHtml +
           '</div>' +
         '</div>' +
       '</div>';
-    if (i % 2 === 1 || i === projects.length - 1) html += '</div>';
   });
   document.getElementById('projects-list').innerHTML = html;
 }

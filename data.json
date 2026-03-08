@@ -122,28 +122,28 @@
   ],
   "projects": [
     {
-      "title": "Photo Gallery",
+      "title": "Photo Gallery Web App",
       "image": "static/images/project-photo_gallery.png",
       "imageAlt": "Project - Photo Gallery",
-      "description": "I built a photo gallery web application where you have to create an account to view the public repository of albums and photos. Any user can create albums and add photos to them. The albums/photos can be updated and deleted. I built my own custom user authentication. I built this using Python and Flask. I hosted the web application on an EC2 AWS instance and used other AWS services to provide functionality to my web app."
+      "links": []
     },
     {
       "title": "Music Blog",
       "image": "static/images/project-music_blog.png",
       "imageAlt": "Project - Music Blog",
-      "description": "I built a music blog which allows users to create and upload blog posts and also music files. The web application has full user profile management including profile photos. I built this web application using Python and Django."
+      "links": []
     },
     {
       "title": "RPG Quest Video Game",
       "image": "static/images/project-rpg_video_game.png",
       "imageAlt": "Project - RPG Video Game",
-      "description": "I built a top-down video game using four action button on a bread board with an accelerometer for character movement. I used an LCD screen to display the video game. The player has to interact with characters and objects throughout the map to get enough information to travel to the dragon's lair to fight the dragon and retrieve the key to unlock the final door! I built this project entirely in C."
+      "links": []
     },
     {
       "title": "Truth Table Generator",
       "image": "static/images/project-truth_table_generator.png",
       "imageAlt": "Project - Truth Table Generator",
-      "description": "I built a truth table generator to help me with checking my homework and with studying for my electrical engineering classes. You enter a boolean function with any variables A-Z and it outputs a dynamically sized truth table with all the true and false permutations that are possible. I built this using Python and the PyQT5 library which allows you to build GUI applications."
+      "links": []
     }
   ]
 }
