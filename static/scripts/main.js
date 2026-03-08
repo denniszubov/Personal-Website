@@ -16,7 +16,12 @@ $(document).ready(function() {
       renderFooter(data.links);
 
       // Re-initialize AOS after content is injected
-      AOS.init();
+      AOS.init({
+        once: true,
+        duration: 600,
+        offset: 80,
+        easing: 'ease-out'
+      });
     });
 });
 
@@ -25,7 +30,7 @@ function renderHero(data) {
   document.getElementById('hero-tagline').textContent = data.tagline;
 
   document.getElementById('hero-linkedin').innerHTML =
-    '<a class="btn btn-primary btn-contact" href="' + data.links.linkedin + '" target="_blank" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Message on LinkedIn</a>';
+    '<a class="btn btn-primary btn-contact" href="' + data.links.linkedin + '" target="_blank">Message on LinkedIn</a>';
 
   document.getElementById('social-buttons').innerHTML =
     '<a class="btn btn-default btn-round btn-lg btn-icon" href="' + data.links.linkedin + '" rel="tooltip" title="Follow me on Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>' +
@@ -54,20 +59,21 @@ function renderAbout(about) {
 
 function renderEducation(education) {
   var html = '';
-  education.forEach(function(edu) {
+  education.forEach(function(edu, i) {
+    var delay = i * 100;
     var detailsHtml = '';
     edu.details.forEach(function(d) {
       detailsHtml += '<li>' + d + '</li>';
     });
     html +=
-      '<div class="card">' +
+      '<div class="card" data-aos="fade-up" data-aos-delay="' + delay + '">' +
         '<div class="row">' +
-          '<div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">' +
+          '<div class="col-md-3">' +
             '<div class="card-body cc-education-header">' +
               '<img src="' + edu.logo + '" alt="' + edu.logoAlt + '"/>' +
             '</div>' +
           '</div>' +
-          '<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">' +
+          '<div class="col-md-9">' +
             '<div class="card-body">' +
               '<div class="h5">' + edu.title + '</div>' +
               '<p class="category">' + edu.school + '<br>' + edu.dates + '</p>' +
@@ -105,16 +111,17 @@ function renderSkills(skills) {
 
 function renderExperience(experience) {
   var html = '';
-  experience.forEach(function(exp) {
+  experience.forEach(function(exp, i) {
+    var delay = i * 100;
     html +=
-      '<div class="card">' +
+      '<div class="card" data-aos="fade-up" data-aos-delay="' + delay + '">' +
         '<div class="row">' +
-          '<div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">' +
+          '<div class="col-md-3">' +
             '<div class="card-body cc-education-header">' +
               '<a href="' + exp.link + '" target="_blank"><img src="' + exp.logo + '" alt="' + exp.logoAlt + '"/></a>' +
             '</div>' +
           '</div>' +
-          '<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">' +
+          '<div class="col-md-9">' +
             '<div class="card-body">' +
               '<div class="h5">' + exp.title + '</div>' +
               '<p class="category">' + exp.company + '<br>' + exp.location + '<br>' + exp.dates + '</p>' +
@@ -129,16 +136,17 @@ function renderExperience(experience) {
 
 function renderCertifications(certifications) {
   var html = '';
-  certifications.forEach(function(cert) {
+  certifications.forEach(function(cert, i) {
+    var delay = i * 100;
     html +=
-      '<div class="card">' +
+      '<div class="card" data-aos="fade-up" data-aos-delay="' + delay + '">' +
         '<div class="row">' +
-          '<div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">' +
+          '<div class="col-md-3">' +
             '<div class="card-body cc-education-header">' +
               '<a href="' + cert.logoLink + '" target="_blank"><img src="' + cert.logo + '" alt="' + cert.logoAlt + '"/></a>' +
             '</div>' +
           '</div>' +
-          '<div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">' +
+          '<div class="col-md-9">' +
             '<div class="card-body">' +
               '<div class="h5">' + cert.title + '</div>' +
               '<p class="category">' + cert.date + '</p>' +
@@ -155,10 +163,11 @@ function renderCertifications(certifications) {
 function renderProjects(projects) {
   var html = '';
   projects.forEach(function(proj, i) {
+    var delay = i * 100;
     // Alternate columns: even index = left col, odd = right col
     if (i % 2 === 0) html += '<div class="col-md-6">';
     html +=
-      '<div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">' +
+      '<div class="card" data-aos="fade-up" data-aos-delay="' + delay + '">' +
         '<div class="card-body">' +
           '<div class="h5 text-center">' + proj.title + '</div>' +
           '<div class="cc-porfolio-image img-raised">' +
