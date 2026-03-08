@@ -7,16 +7,8 @@ $(document).ready(function() {
     // once: true
   }); // initialize animate on scroll library
 
-  // Calculate age from birthdate
-  var birthdate = new Date(2001, 10, 26); // Nov 26, 2001 (month is 0-indexed)
-  var today = new Date();
-  var age = today.getFullYear() - birthdate.getFullYear();
-  if (today.getMonth() < birthdate.getMonth() ||
-      (today.getMonth() === birthdate.getMonth() && today.getDate() < birthdate.getDate())) {
-    age--;
-  }
-  document.getElementById('age').textContent = age;
-  document.getElementById('year').textContent = today.getFullYear();
+  // Set current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
 });
 
 // Smooth scroll for links with hashes

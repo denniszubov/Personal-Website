@@ -92,24 +92,20 @@
           <div class="card-body">
             <div class="h4 mt-0 title">Basic Information</div>
             <div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-              <div class="col-sm-8"><span id="age"></span></div>
+              <div class="col-sm-4"><strong class="text-uppercase">Location:</strong></div>
+              <div class="col-sm-8">New York City</div>
             </div>
             <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Job Interests:</strong></div>
-              <div class="col-sm-8">SWE, Quant Developer</div>
+              <div class="col-sm-4"><strong class="text-uppercase">Role:</strong></div>
+              <div class="col-sm-8">Quant Developer</div>
             </div>
             <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Major:</strong></div>
-              <div class="col-sm-8">Computer Engineering</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Minor:</strong></div>
-              <div class="col-sm-8">Economics</div>
+              <div class="col-sm-4"><strong class="text-uppercase">Education:</strong></div>
+              <div class="col-sm-8">BS Computer Engineering, Georgia Tech</div>
             </div>
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Languages:</strong></div>
-              <div class="col-sm-8">English, French, Russian</div>
+              <div class="col-sm-8">English (native), French (conversational), Russian (fluent)</div>
             </div>
           </div>
         </div>
@@ -175,23 +171,27 @@
     <div class="h4 text-center mb-4 title">Skills</div>
     <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="card-body">
-        <div class="text-center">
-          <span class="badge rounded-pill bg-primary m-2 p-2">Python</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">Java</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">Algorithmic Trading</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">C</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">C++</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">Git</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">CI/CD</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">Computer Architecture</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">AWS</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">JavaScript</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">TypeScript</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">SQL</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">Django</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">Flask</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">Supervised ML</span>
-          <span class="badge rounded-pill bg-primary m-2 p-2">Product Demos</span>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="skill-category">
+              <div class="h6 skill-category-title">Programming</div>
+              <p>Python, C++, SQL, C</p>
+            </div>
+            <div class="skill-category">
+              <div class="h6 skill-category-title">Data & Infrastructure</div>
+              <p>Pandas, NumPy, AWS, Linux, Git, CI/CD, Databases, Docker, Regression Testing, Python Profiling & Performance Optimization</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="skill-category">
+              <div class="h6 skill-category-title">Quant & Trading</div>
+              <p>Systematic Trading, Signal & Strategy Implementation, Backtesting Frameworks, Rates Derivatives</p>
+            </div>
+            <div class="skill-category">
+              <div class="h6 skill-category-title">Systems</div>
+              <p>Operating Systems, CPU & Memory Virtualization, Concurrency</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -199,21 +199,20 @@
 </div>
 
 <style>
-.badge {
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+.skill-category {
+  margin-bottom: 1rem;
 }
-
-.badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+.skill-category-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2c2c2c;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
 }
-
-@media (max-width: 768px) {
-  .badge {
-    font-size: 0.9rem;
-  }
+.skill-category p {
+  margin-bottom: 0;
+  color: #555;
 }
 </style>
 
