@@ -1,11 +1,9 @@
-// Fetch data.json and render all sections
-$(document).ready(function() {
-  // Set current year in footer
+$(document).ready(function () {
   document.getElementById('year').textContent = new Date().getFullYear();
 
   fetch('data.json')
-    .then(function(res) { return res.json(); })
-    .then(function(data) {
+    .then(res => res.json())
+    .then(data => {
       renderHero(data);
       renderAbout(data.about);
       renderEducation(data.education);
@@ -15,212 +13,167 @@ $(document).ready(function() {
       renderProjects(data.projects);
       renderFooter(data.links);
 
-      // Re-initialize AOS after content is injected
-      AOS.init({
-        once: true,
-        duration: 600,
-        offset: 80,
-        easing: 'ease-out'
-      });
+      AOS.init({ once: true, duration: 600, offset: 80, easing: 'ease-out' });
     });
 });
+
+// --- Hero ---
 
 function renderHero(data) {
   document.getElementById('hero-name').textContent = data.name;
   document.getElementById('hero-tagline').textContent = data.tagline;
 
   document.getElementById('hero-linkedin').innerHTML =
-    '<a class="btn btn-primary btn-contact" href="' + data.links.linkedin + '" target="_blank">Message on LinkedIn</a>';
+    `<a class="btn btn-primary btn-contact" href="${data.links.linkedin}" target="_blank">Message on LinkedIn</a>`;
 
   document.getElementById('social-buttons').innerHTML =
-    '<a class="btn btn-default btn-round btn-lg btn-icon" href="' + data.links.linkedin + '" rel="tooltip" title="Follow me on Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>' +
-    '<a class="btn btn-default btn-round btn-lg btn-icon" href="' + data.links.github + '" rel="tooltip" title="Follow me on GitHub" target="_blank"><i class="fa fa-github"></i></a>';
+    `<a class="btn btn-default btn-round btn-lg btn-icon" href="${data.links.linkedin}" rel="tooltip" title="Follow me on Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>` +
+    `<a class="btn btn-default btn-round btn-lg btn-icon" href="${data.links.github}" rel="tooltip" title="Follow me on GitHub" target="_blank"><i class="fa fa-github"></i></a>`;
 }
+
+// --- About ---
 
 function renderAbout(about) {
-  var aboutHtml = '';
-  about.paragraphs.forEach(function(p) {
-    aboutHtml += '<p>' + p + '</p>';
-  });
-  document.getElementById('about-text').innerHTML = aboutHtml;
+  document.getElementById('about-text').innerHTML =
+    about.paragraphs.map(p => `<p>${p}</p>`).join('');
 
-  var infoHtml = '';
-  var keys = Object.keys(about.info);
-  keys.forEach(function(key, i) {
-    var mt = i > 0 ? ' mt-3' : '';
-    infoHtml +=
-      '<div class="row' + mt + '">' +
-        '<div class="col-sm-4"><strong class="text-uppercase">' + key + ':</strong></div>' +
-        '<div class="col-sm-8">' + about.info[key] + '</div>' +
-      '</div>';
-  });
-  document.getElementById('basic-info').innerHTML = infoHtml;
+  document.getElementById('basic-info').innerHTML =
+    Object.entries(about.info).map(([key, val], i) =>
+      `<div class="row${i > 0 ? ' mt-3' : ''}">
+        <div class="col-sm-4"><strong class="text-uppercase">${key}:</strong></div>
+        <div class="col-sm-8">${val}</div>
+      </div>`
+    ).join('');
 }
+
+// --- Shared card renderer (education, experience, certifications) ---
+
+function renderCard(item, i, contentHtml) {
+  const delay = i * 100;
+  const logoImg = item.link
+    ? `<a href="${item.link}" target="_blank"><img src="${item.logo}" alt="${item.logoAlt}"/></a>`
+    : `<img src="${item.logo}" alt="${item.logoAlt}"/>`;
+
+  return `
+    <div class="card" data-aos="fade-up" data-aos-delay="${delay}">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card-body cc-education-header">${logoImg}</div>
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">${contentHtml}</div>
+        </div>
+      </div>
+    </div>`;
+}
+
+// --- Education ---
 
 function renderEducation(education) {
-  var html = '';
-  education.forEach(function(edu, i) {
-    var delay = i * 100;
-    var detailsHtml = '';
-    edu.details.forEach(function(d) {
-      detailsHtml += '<li>' + d + '</li>';
-    });
-    html +=
-      '<div class="card" data-aos="fade-up" data-aos-delay="' + delay + '">' +
-        '<div class="row">' +
-          '<div class="col-md-3">' +
-            '<div class="card-body cc-education-header">' +
-              '<img src="' + edu.logo + '" alt="' + edu.logoAlt + '"/>' +
-            '</div>' +
-          '</div>' +
-          '<div class="col-md-9">' +
-            '<div class="card-body">' +
-              '<div class="h5">' + edu.title + '</div>' +
-              '<p class="category">' + edu.school + '<br>' + edu.dates + '</p>' +
-              '<p><ul>' + detailsHtml + '</ul></p>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-  });
-  document.getElementById('education-list').innerHTML = html;
+  document.getElementById('education-list').innerHTML = education.map((edu, i) => {
+    const details = edu.details.map(d => `<li>${d}</li>`).join('');
+    const content = `
+      <div class="h5">${edu.title}</div>
+      <p class="category">${edu.school}<br>${edu.dates}</p>
+      <ul>${details}</ul>`;
+    return renderCard(edu, i, content);
+  }).join('');
 }
+
+// --- Skills ---
 
 function renderSkills(skills) {
-  var keys = Object.keys(skills);
-  var half = Math.ceil(keys.length / 2);
-  var col1 = keys.slice(0, half);
-  var col2 = keys.slice(half);
+  const entries = Object.entries(skills);
+  const half = Math.ceil(entries.length / 2);
 
-  function buildCol(arr) {
-    var h = '';
-    arr.forEach(function(key) {
-      h +=
-        '<div class="skill-category">' +
-          '<div class="h6 skill-category-title">' + key + '</div>' +
-          '<p>' + skills[key] + '</p>' +
-        '</div>';
-    });
-    return h;
-  }
+  const buildCol = items => items.map(([key, val]) =>
+    `<div class="skill-category">
+      <div class="h6 skill-category-title">${key}</div>
+      <p>${val}</p>
+    </div>`
+  ).join('');
 
   document.getElementById('skills-content').innerHTML =
-    '<div class="col-md-6">' + buildCol(col1) + '</div>' +
-    '<div class="col-md-6">' + buildCol(col2) + '</div>';
+    `<div class="col-md-6">${buildCol(entries.slice(0, half))}</div>` +
+    `<div class="col-md-6">${buildCol(entries.slice(half))}</div>`;
 }
+
+// --- Experience ---
 
 function renderExperience(experience) {
-  var html = '';
-  experience.forEach(function(exp, i) {
-    var delay = i * 100;
-    html +=
-      '<div class="card" data-aos="fade-up" data-aos-delay="' + delay + '">' +
-        '<div class="row">' +
-          '<div class="col-md-3">' +
-            '<div class="card-body cc-education-header">' +
-              '<a href="' + exp.link + '" target="_blank"><img src="' + exp.logo + '" alt="' + exp.logoAlt + '"/></a>' +
-            '</div>' +
-          '</div>' +
-          '<div class="col-md-9">' +
-            '<div class="card-body">' +
-              '<div class="h5">' + exp.title + '</div>' +
-              '<p class="category">' + exp.company + '<br>' + exp.location + '<br>' + exp.dates + '</p>' +
-              '<p>' + exp.description + '</p>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-  });
-  document.getElementById('experience-list').innerHTML = html;
+  document.getElementById('experience-list').innerHTML = experience.map((exp, i) => {
+    const content = `
+      <div class="h5">${exp.title}</div>
+      <p class="category">${exp.company}<br>${exp.location}<br>${exp.dates}</p>
+      <p>${exp.description}</p>`;
+    return renderCard(exp, i, content);
+  }).join('');
 }
+
+// --- Certifications ---
 
 function renderCertifications(certifications) {
-  var html = '';
-  certifications.forEach(function(cert, i) {
-    var delay = i * 100;
-    html +=
-      '<div class="card" data-aos="fade-up" data-aos-delay="' + delay + '">' +
-        '<div class="row">' +
-          '<div class="col-md-3">' +
-            '<div class="card-body cc-education-header">' +
-              '<a href="' + cert.logoLink + '" target="_blank"><img src="' + cert.logo + '" alt="' + cert.logoAlt + '"/></a>' +
-            '</div>' +
-          '</div>' +
-          '<div class="col-md-9">' +
-            '<div class="card-body">' +
-              '<div class="h5">' + cert.title + '</div>' +
-              '<p class="category">' + cert.date + '</p>' +
-              '<p><a class="link-primary" href="' + cert.certLink + '" target="_blank"><b>View certification</b></a></p>' +
-              '<p>' + cert.contents + '</p>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-  });
-  document.getElementById('certifications-list').innerHTML = html;
+  document.getElementById('certifications-list').innerHTML = certifications.map((cert, i) => {
+    const item = { logo: cert.logo, logoAlt: cert.logoAlt, link: cert.logoLink };
+    const content = `
+      <div class="h5">${cert.title}</div>
+      <p class="category">${cert.date}</p>
+      <p><a class="link-primary" href="${cert.certLink}" target="_blank"><b>View certification</b></a></p>
+      <p>${cert.contents}</p>`;
+    return renderCard(item, i, content);
+  }).join('');
 }
 
+// --- Projects ---
+
 function renderProjects(projects) {
-  var html = '';
-  projects.forEach(function(proj, i) {
-    var delay = i * 100;
-    var linksHtml = '';
-    if (proj.links && proj.links.length > 0) {
-      linksHtml = '<div class="project-links">';
-      proj.links.forEach(function(link) {
-        linksHtml += '<a href="' + link.url + '" target="_blank" class="btn btn-default btn-sm">' + link.label + '</a> ';
-      });
-      linksHtml += '</div>';
-    }
-    html +=
-      '<div class="col-md-6">' +
-        '<div class="card" data-aos="fade-up" data-aos-delay="' + delay + '">' +
-          '<div class="card-body text-center">' +
-            '<div class="h5">' + proj.title + '</div>' +
-            '<img class="project-image img-raised" src="' + proj.image + '" alt="' + proj.imageAlt + '"/>' +
-            linksHtml +
-          '</div>' +
-        '</div>' +
-      '</div>';
-  });
-  document.getElementById('projects-list').innerHTML = html;
+  document.getElementById('projects-list').innerHTML = projects.map((proj, i) => {
+    const delay = i * 100;
+    const linksHtml = proj.links && proj.links.length > 0
+      ? `<div class="project-links">${proj.links.map(l =>
+          `<a href="${l.url}" target="_blank" class="btn btn-default btn-sm">${l.label}</a>`
+        ).join(' ')}</div>`
+      : '';
+
+    return `
+      <div class="col-md-6">
+        <div class="card" data-aos="fade-up" data-aos-delay="${delay}">
+          <div class="card-body text-center">
+            <div class="h5">${proj.title}</div>
+            <img class="project-image img-raised" src="${proj.image}" alt="${proj.imageAlt}"/>
+            ${linksHtml}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
 }
+
+// --- Footer ---
 
 function renderFooter(links) {
   document.getElementById('footer-social').innerHTML =
-    '<a class="cc-linkedin btn btn-link" href="' + links.linkedin + '" target="_blank"><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a>' +
-    '<a class="cc-github btn btn-link" href="' + links.github + '" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>';
+    `<a class="cc-linkedin btn btn-link" href="${links.linkedin}" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>` +
+    `<a class="cc-github btn btn-link" href="${links.github}" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>`;
 }
 
-// Smooth scroll for links with hashes
-$('a.smooth-scroll')
-.click(function(event) {
-  // On-page links
+// --- Smooth scroll ---
+
+$('a.smooth-scroll').click(function (event) {
   if (
-    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-    &&
-    location.hostname == this.hostname
+    location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') &&
+    location.hostname === this.hostname
   ) {
-    // Figure out element to scroll to
-    var target = $(this.hash);
+    let target = $(this.hash);
     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-    // Does a scroll target exist?
     if (target.length) {
-      // Only prevent default if animation is actually gonna happen
       event.preventDefault();
-      $('html, body').animate({
-        scrollTop: target.offset().top
-      }, 1000, function() {
-        // Callback after animation
-        // Must change focus!
-        var $target = $(target);
+      $('html, body').animate({ scrollTop: target.offset().top }, 1000, function () {
+        const $target = $(target);
         $target.focus();
-        if ($target.is(":focus")) { // Checking if the target was focused
-          return false;
-        } else {
-          $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-          $target.focus(); // Set focus again
-        };
+        if (!$target.is(':focus')) {
+          $target.attr('tabindex', '-1');
+          $target.focus();
+        }
       });
     }
   }
