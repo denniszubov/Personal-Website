@@ -60,16 +60,14 @@
       <div class="container">
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="static/images/head_shot.jpg" alt="Dennis Zubov Head Shot"/></a></div>
-          <div class="h2 title">Dennis Zubov</div>
-          <p class="category text-white">Development, Engineering, Finance</p>
-          <a class="btn btn-primary btn-contact" href="https://www.linkedin.com/in/dennis-zubov/" target="_blank" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Message on LinkedIn</a>
+          <div class="h2 title" id="hero-name"></div>
+          <p class="category text-white" id="hero-tagline"></p>
+          <span id="hero-linkedin"></span>
         </div>
       </div>
       <div class="section">
         <div class="container">
-          <div class="button-container">
-            <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.linkedin.com/in/dennis-zubov/" rel="tooltip" title="Follow me on Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a class="btn btn-default btn-round btn-lg btn-icon" href="https://github.com/denniszubov" rel="tooltip" title="Follow me on GitHub" target="_blank"><i class="fa fa-github"></i></a></div>
+          <div class="button-container" id="social-buttons"></div>
         </div>
       </div>
     </div>
@@ -84,29 +82,13 @@
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
             <div class="h4 mt-0 title">About</div>
-            <p>Hello! I am Dennis Zubov. Interested in Development, Engineering and Finance.</p>
-            <p>In my free time, I enjoy playing soccer, chess, and reading books. I enjoy solving challening problems using my engineering and programming skills. Born and raised in South Africa, graduated from Georgia Tech in Atlanta, currently working in New York City. Please message me on LinkedIn if you would like an up-to-date resume or more information about my qualifications and experience!</p>
+            <div id="about-text"></div>
           </div>
         </div>
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
             <div class="h4 mt-0 title">Basic Information</div>
-            <div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Location:</strong></div>
-              <div class="col-sm-8">New York City</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Role:</strong></div>
-              <div class="col-sm-8">Quant Developer</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Education:</strong></div>
-              <div class="col-sm-8">BS Computer Engineering, Georgia Tech</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Languages:</strong></div>
-              <div class="col-sm-8">English (native), French (conversational), Russian (fluent)</div>
-            </div>
+            <div id="basic-info"></div>
           </div>
         </div>
       </div>
@@ -118,50 +100,7 @@
 <div class="section" id="education">
   <div class="container cc-education">
     <div class="h4 text-center mb-4 title">Education</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <img src="static/images/gt_logo.jpeg" alt="Georgia Tech Logo"/>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">BS in Computer Engineering</div>
-            <p class="category">Georgia Institute of Technology<br>2020, Aug - 2024 May</p>
-            <p>
-              <ul>
-                <li>Concentrations: Information Internetworks, Distributed System & Software Design</li>
-                <li>Minor: Economics</li>
-                <li>GPA: 4.0/4.0</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <img src="static/images/gtl_logo.jpeg" alt="Georgia Tech Lorrain Logo"/>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Exchange Program (France)</div>
-            <p class="category">Georgia Tech Lorraine<br>2022, Jan - May</p>
-            <p>
-              <ul>
-                <li>One semester exchange program in Metz, France.</li>
-                <li>Took French classes and immersed myself in the culture and language</li>
-                <li>GPA: 4.0/4.0</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="education-list"></div>
   </div>
 </div>
 
@@ -171,28 +110,7 @@
     <div class="h4 text-center mb-4 title">Skills</div>
     <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="card-body">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="skill-category">
-              <div class="h6 skill-category-title">Programming</div>
-              <p>Python, C++, SQL, C</p>
-            </div>
-            <div class="skill-category">
-              <div class="h6 skill-category-title">Data & Infrastructure</div>
-              <p>Pandas, NumPy, AWS, Linux, Git, CI/CD, Databases, Docker, Regression Testing, Python Profiling & Performance Optimization</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="skill-category">
-              <div class="h6 skill-category-title">Quant & Trading</div>
-              <p>Systematic Trading, Signal & Strategy Implementation, Backtesting Frameworks, Rates Derivatives</p>
-            </div>
-            <div class="skill-category">
-              <div class="h6 skill-category-title">Systems</div>
-              <p>Operating Systems, CPU & Memory Virtualization, Concurrency</p>
-            </div>
-          </div>
-        </div>
+        <div class="row" id="skills-content"></div>
       </div>
     </div>
   </div>
@@ -220,73 +138,7 @@
 <div class="section" id="experience">
   <div class="container cc-experience">
     <div class="h4 text-center mb-4 title">Experience</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <a href="https://www.linkedin.com/company/pimco" target="_blank"><img src="static/images/pimco_logo.jpeg" alt="PIMCO Logo"/></a>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Quant Developer</div>
-            <p class="category">PIMCO<br>New York, NY<br>2024, Aug - Present</p>
-            <p>Systematic Trading</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <a href="https://www.linkedin.com/school/georgia-institute-of-technology/" target="_blank"><img src="static/images/gt_logo.jpeg" alt="Georgia Tech Logo"/></a>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Software Engineer Intern</div>
-            <p class="category">Georgia Tech<br>Atlanta, GA<br>2023, Apr - Present</p>
-            <p>On-campus part-time for the ECE department at Georgia Tech. I'm building a financial reporting web application from zero to one. I'm leading the development of this application, in which
-              we are using Python, Django, MySQL, Oracle DB. I led the hosting of the application using AWS services. We are using RDS, ECR, App Runner, EC2, IAM, and Secrets Manager.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <a href="https://www.linkedin.com/company/pimco" target="_blank"><img src="static/images/pimco_logo.jpeg" alt="PIMCO Logo"/></a>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Software Engineer Intern</div>
-            <p class="category">PIMCO<br>Newport Beach, CA<br>2023, June - Aug</p>
-            <p>Worked on the Systematic Trading team.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <a href="https://www.linkedin.com/company/jurumani/" target="_blank"><img src="static/images/jurumani_solutions_logo.jpeg" alt="Jurumani Solutions Logo"/></a>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Software Engineer Intern</div>
-            <p class="category">Jurumani Solutions<br>Johannesburg, South Africa<br>2020, Feb - July</p>
-            <p>I completed a 6-month internship as a backend software engineer where I was mostly building API endpoints for the web application of a large mobile services provider in South Africa.
-               I was introduced to the world of software engineering and loved it! I used Python with Django for most of my development.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="experience-list"></div>
   </div>
 </div>
 
@@ -294,57 +146,7 @@
 <div class="section" id="certifications">
   <div class="container cc-experience">
     <div class="h4 text-center mb-4 title">Certifications</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <a href="https://www.coursera.org" target="_blank"><img src="static/images/coursera_logo.jpeg" alt="Coursera Logo"/></a>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Advanced Learning Algorithms</div>
-            <p class="category">Completed Feb 2024</p>
-            <p><a class="link-primary" href="https://www.coursera.org/account/accomplishments/certificate/5UQ44RKC4JQV" target="_blank"><b>View certification</b></a></p>
-            <p>Contents: Neural Networks, ML Best Practices, Multiclass Classification, Decision Trees, Random Forests</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <a href="https://www.coursera.org" target="_blank"><img src="static/images/coursera_logo.jpeg" alt="Coursera Logo"/></a>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Supervised Machine Learning: Regression and Classification</div>
-            <p class="category">Completed Jan 2024</p>
-            <p><a class="link-primary" href="https://www.coursera.org/account/accomplishments/certificate/SVGVFVB443MZ" target="_blank"><b>View certification</b></a></p>
-            <p>Contents: Linear Regression, Logistic Regression</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <a href="https://www.bloomberg.com" target="_blank"><img src="static/images/bloomberg_lp_logo.jpeg" alt="Bloomberg LP Logo"/></a>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Bloomberg Market Concepts</div>
-            <p class="category">Completed Nov 2022</p>
-            <p><a class="link-primary" href="https://portal.bloombergforeducation.com/certificates/EAguZiFXcX6e1y2aaUSeAANG" target="_blank"><b>View certification</b></a></p>
-            <p>Contents: Economic Indicators, Fixed Income, Equities, Currencies, Commodities, Fundamental Analysis, Financial Markets, Risk Management, Bloomberg Terminal</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="certifications-list"></div>
   </div>
 </div>
 
@@ -359,79 +161,9 @@
     <div class="tab-content gallery mt-5">
       <div class="tab-pane active" id="web-development">
         <div class="ml-auto mr-auto">
-          <div class="row">
-            <div class="col-md-6">
-
-              <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                <div class="card-body">
-                  <div class="h5 text-center">Photo Gallery</div>
-                  <div class="cc-porfolio-image img-raised">
-                    <figure class="cc-effect"><img src="static/images/project-photo_gallery.png" alt="Project - Photo Gallery"/>
-                      <figcaption>
-                        <br>
-                        <p>I built a photo gallery web application where you have to create an account to view the public repository of albums and photos. Any user can create albums and add photos to them. The albums/photos can be updated and deleted.
-                          I built my own custom user authentication. I built this using Python and Flask. I hosted the web application on an EC2 AWS instance and used other AWS services to provide functionality to my web app.
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                <div class="card-body">
-                  <div class="h5 text-center">Music Blog</div>
-                  <div class="cc-porfolio-image img-raised">
-                    <figure class="cc-effect"><img src="static/images/project-music_blog.png" alt="Project - Music Blog"/>
-                      <figcaption>
-                        <br>
-                        <p>I built a music blog which allows users to create and upload blog posts and also music files. The web application has full user profile management including profile photos. I built this web application using Python and Django.</p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div class="col-md-6">
-
-              <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                <div class="card-body">
-                  <div class="h5 text-center">RPG Quest Video Game</div>
-                  <div class="cc-porfolio-image img-raised">
-                    <figure class="cc-effect"><img src="static/images/project-rpg_video_game.png" alt="Project - RPG Video Game"/>
-                      <figcaption>
-                        <br>
-                        <p>I built a top-down video game using four action button on a bread board with an accelerometer for character movement. I used an LCD screen to display the video game.
-                          The player has to interact with characters and objects throughout the map to get enough information to travel to the dragon's lair to fight the dragon and retrieve the key to unlock the final door! I built this project entirely in C.
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                <div class="card-body">
-                  <div class="h5 text-center">Truth Table Generator</div>
-                  <div class="cc-porfolio-image img-raised">
-                    <figure class="cc-effect"><img src="static/images/project-truth_table_generator.png" alt="Project - Truth Table Generator"/>
-                      <figcaption>
-                        <br>
-                        <p>I built a truth table generator to help me with checking my homework and with studying for my electrical engineering classes. You enter a boolean function with any variables A-Z and it outputs a dynamically sized truth table with all the true and false permutations that are possible.
-                          I built this using Python and the PyQT5 library which allows you to build GUI applications.
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
+          <div class="row" id="projects-list"></div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -442,9 +174,7 @@
 
     <!-- Footer Section -->
     <footer class="footer">
-      <div class="container text-center">
-        <a class="cc-linkedin btn btn-link" href="https://www.linkedin.com/in/dennis-zubov/" target="_blank"><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a>
-        <a class="cc-github btn btn-link" href="https://github.com/denniszubov" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></div>
+      <div class="container text-center" id="footer-social"></div>
       <div class="h4 title text-center">Dennis Zubov</div>
       <div class="text-center text-muted">
         <p>&copy; Copyright 2022 - <span id="year"></span></p>
