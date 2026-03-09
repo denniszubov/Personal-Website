@@ -98,7 +98,7 @@
       "logoAlt": "AWS Logo",
       "logoLink": "https://aws.amazon.com",
       "certLink": "https://cp.certmetrics.com/amazon/en/public/verify/credential/ced8d168d21443d2b0e675c9ee66f739",
-      "contents": "AWS Cloud Infrastructure, Compute & Storage (EC2, S3), Managed Databases (RDS), Serverless (Lambda), Security & IAM, Cost Management, Scalable and Highly Available System Design"
+      "contents": "Contents: AWS Cloud Infrastructure, Compute & Storage (EC2, S3), Managed Databases (RDS), Serverless (Lambda), Security & IAM, Cost Management, Scalable and Highly Available System Design"
     },
     {
       "title": "Advanced Learning Algorithms",
