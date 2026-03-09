@@ -19,49 +19,13 @@
 }
 
 /* Profile Image Style */
-@keyframes pulsate {
-  0% {transform: scale(0.6, 0.6); opacity: 0.0;}
-  50% {opacity: 1.0;}
-  100% {transform: scale(1, 1); opacity: 0.0;}
-}
-
 .cc-profile-image {
-  a {
-    position: relative;
-  }
-  
-  a:before {
-    content:"";
-    border: 15px solid rgba($primary-color, 0.6);
-    border-radius: 50%;
-    height: 180px;
-    width: 180px;
-    position: absolute;
-    left: 0;
-    animation: pulsate 1.6s ease-out;
-    animation-iteration-count: infinite; 
-    opacity: 0.0;
-    z-index: 99;
-  }
-  
   img {
-    position: relative;
     border-radius: 50%;
     height: 180px;
     width: 180px;
-    padding: 0;
-    margin: 0;
-    border: 15px solid transparent;
-    z-index: 9999;
-    transition: all .3s ease-out;
-  }
-  
-  a:hover img {
-  transform: scale(1.06, 1.06);
-  }
-  
-  a:hover:before {
-    animation: none;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.3);
   }
 }
 
