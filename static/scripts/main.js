@@ -23,9 +23,6 @@ function renderHero(data) {
   document.getElementById('hero-name').textContent = data.name;
   document.getElementById('hero-tagline').textContent = data.tagline;
 
-  document.getElementById('hero-linkedin').innerHTML =
-    `<a class="btn btn-primary btn-contact" href="${data.links.linkedin}" target="_blank">Message on LinkedIn</a>`;
-
   document.getElementById('social-buttons').innerHTML =
     `<a class="btn btn-default btn-round btn-lg btn-icon" href="${data.links.linkedin}" rel="tooltip" title="Follow me on Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>` +
     `<a class="btn btn-default btn-round btn-lg btn-icon" href="${data.links.github}" rel="tooltip" title="Follow me on GitHub" target="_blank"><i class="fa fa-github"></i></a>`;
