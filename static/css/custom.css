@@ -24,6 +24,48 @@
   color: #555;
 }
 
+.role-timeline {
+  position: relative;
+  padding-left: 16px;
+  border-left: 2px solid #e0e0e0;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.role-entry {
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.role-entry:last-child {
+  padding-bottom: 0;
+}
+
+.role-entry::before {
+  content: '';
+  position: absolute;
+  left: -21px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  border: 2px solid #fff;
+}
+
+.role-current::before {
+  background: #2CA8FF;
+}
+
+.role-title {
+  margin-bottom: 0;
+}
+
+.role-dates {
+  font-size: 0.85em;
+  color: #9A9A9A;
+}
+
 .project-image {
   width: 100%;
   border-radius: 4px;

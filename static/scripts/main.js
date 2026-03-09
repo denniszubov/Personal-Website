@@ -99,10 +99,24 @@ function renderSkills(skills) {
 
 function renderExperience(experience) {
   document.getElementById('experience-list').innerHTML = experience.map((exp, i) => {
-    const content = `
-      <div class="h5">${exp.title}</div>
-      <p class="category">${exp.company}<br>${exp.location}<br>${exp.dates}</p>
-      <p>${exp.description}</p>`;
+    let titleBlock;
+    if (exp.roles) {
+      titleBlock = `
+        <div class="role-timeline">
+          ${exp.roles.map((role, j) => `
+            <div class="role-entry${j === 0 ? ' role-current' : ''}">
+              <div class="h5 role-title">${role.title}</div>
+              <div class="role-dates">${role.dates}</div>
+            </div>
+          `).join('')}
+        </div>
+        <p class="category">${exp.company}<br>${exp.location}<br>${exp.dates}</p>`;
+    } else {
+      titleBlock = `
+        <div class="h5">${exp.title}</div>
+        <p class="category">${exp.company}<br>${exp.location}<br>${exp.dates}</p>`;
+    }
+    const content = titleBlock + `<p>${exp.description}</p>`;
     return renderCard(exp, i, content);
   }).join('');
 }

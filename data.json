@@ -47,24 +47,17 @@
   },
   "experience": [
     {
-      "title": "Quant Developer, Associate",
       "company": "PIMCO",
       "location": "New York, NY",
-      "dates": "Jan 2026 - Present",
+      "dates": "Aug 2024 - Present",
       "logo": "static/images/pimco_logo.jpeg",
       "logoAlt": "PIMCO Logo",
       "link": "https://www.linkedin.com/company/pimco",
-      "description": "Systematic Trading"
-    },
-    {
-      "title": "Quant Developer, Analyst",
-      "company": "PIMCO",
-      "location": "New York, NY",
-      "dates": "Aug 2024 - Dec 2025",
-      "logo": "static/images/pimco_logo.jpeg",
-      "logoAlt": "PIMCO Logo",
-      "link": "https://www.linkedin.com/company/pimco",
-      "description": "Systematic Trading"
+      "description": "Systematic Trading",
+      "roles": [
+        { "title": "Quant Developer, Associate", "dates": "Jan 2026 - Present" },
+        { "title": "Quant Developer, Analyst", "dates": "Aug 2024 - Dec 2025" }
+      ]
     },
     {
       "title": "Software Engineer (part-time)",
