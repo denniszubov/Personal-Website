@@ -24,8 +24,8 @@ function renderHero(data) {
   document.getElementById('hero-tagline').textContent = data.tagline;
 
   document.getElementById('social-buttons').innerHTML =
-    `<a class="btn btn-default btn-round btn-lg btn-icon" href="${data.links.linkedin}" rel="tooltip" title="Follow me on Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>` +
-    `<a class="btn btn-default btn-round btn-lg btn-icon" href="${data.links.github}" rel="tooltip" title="Follow me on GitHub" target="_blank"><i class="fa fa-github"></i></a>`;
+    `<a class="btn btn-default btn-round btn-lg btn-icon" href="${data.links.linkedin}" rel="noopener noreferrer" title="Follow me on Linkedin" target="_blank" aria-label="LinkedIn profile"><i class="fa fa-linkedin"></i></a>` +
+    `<a class="btn btn-default btn-round btn-lg btn-icon" href="${data.links.github}" rel="noopener noreferrer" title="Follow me on GitHub" target="_blank" aria-label="GitHub profile"><i class="fa fa-github"></i></a>`;
 }
 
 // --- About ---
@@ -48,7 +48,7 @@ function renderAbout(about) {
 function renderCard(item, i, contentHtml) {
   const delay = i * 100;
   const logoImg = item.link
-    ? `<a href="${item.link}" target="_blank"><img src="${item.logo}" alt="${item.logoAlt}"/></a>`
+    ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer"><img src="${item.logo}" alt="${item.logoAlt}"/></a>`
     : `<img src="${item.logo}" alt="${item.logoAlt}"/>`;
 
   return `
@@ -129,7 +129,7 @@ function renderCertifications(certifications) {
     const content = `
       <div class="h5">${cert.title}</div>
       <p class="category">${cert.date}</p>
-      <p><a class="link-primary" href="${cert.certLink}" target="_blank"><b>View certification</b></a></p>
+      <p><a class="link-primary" href="${cert.certLink}" target="_blank" rel="noopener noreferrer"><b>View certification</b></a></p>
       <p>${cert.contents}</p>`;
     return renderCard(item, i, content);
   }).join('');
@@ -142,7 +142,7 @@ function renderProjects(projects) {
     const delay = i * 100;
     const linksHtml = proj.links && proj.links.length > 0
       ? `<div class="project-links">${proj.links.map(l =>
-          `<a href="${l.url}" target="_blank" class="btn btn-default btn-sm">${l.label}</a>`
+          `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="btn btn-default btn-sm">${l.label}</a>`
         ).join(' ')}</div>`
       : '';
 
@@ -163,8 +163,8 @@ function renderProjects(projects) {
 
 function renderFooter(links) {
   document.getElementById('footer-social').innerHTML =
-    `<a class="cc-linkedin btn btn-link" href="${links.linkedin}" target="_blank"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>` +
-    `<a class="cc-github btn btn-link" href="${links.github}" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>`;
+    `<a class="cc-linkedin btn btn-link" href="${links.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>` +
+    `<a class="cc-github btn btn-link" href="${links.github}" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>`;
 }
 
 // --- Smooth scroll ---
