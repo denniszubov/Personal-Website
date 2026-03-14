@@ -40,10 +40,10 @@
     }
   ],
   "skills": {
-    "Programming": "Python, C++, SQL, C",
-    "Quant & Trading": "Systematic Trading, Signal & Strategy Implementation, Backtesting Frameworks, Rates Derivatives",
-    "Data & Infrastructure": "Pandas, NumPy, AWS, Linux, Git, CI/CD, Databases, Docker, Regression Testing, Python Profiling & Performance Optimization",
-    "Systems": "Operating Systems, CPU & Memory Virtualization, Concurrency"
+    "Programming": "Python, C++, SQL",
+    "Data/Tools": "NumPy, Pandas, Linux, Git, Docker, CI/CD",
+    "Systems": "Operating Systems, Concurrency, Computer Architecture, Memory Hierarchy, Virtual Memory, Profiling, Performance Optimization",
+    "Quant": "Systematic Trading, Signal Implementation, Backtesting, Rates Derivatives"
   },
   "experience": [
     {
