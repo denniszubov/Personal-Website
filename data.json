@@ -130,6 +130,15 @@
   ],
   "projects": [
     {
+      "title": "N-Body Gravity Simulator",
+      "image": "static/images/project-nbody-gravity.gif",
+      "imageAlt": "N-Body Gravity Simulator",
+      "links": [
+        { "label": "Live Demo", "url": "https://n-body-gravity-simulation.onrender.com/" },
+        { "label": "GitHub", "url": "https://github.com/denniszubov/n-body-gravity-simulation" }
+      ]
+    },
+    {
       "title": "Heat Diffusion Simulator",
       "image": "static/images/project-heat-diffusion.gif",
       "imageAlt": "Heat Diffusion Simulator",
