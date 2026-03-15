@@ -78,16 +78,6 @@
       "logoAlt": "PIMCO Logo",
       "link": "https://www.linkedin.com/company/pimco",
       "description": "Systematic Trading"
-    },
-    {
-      "title": "Software Engineering Intern",
-      "company": "Jurumani Solutions",
-      "location": "Johannesburg, South Africa",
-      "dates": "Feb - July 2020",
-      "logo": "static/images/jurumani_solutions_logo.jpeg",
-      "logoAlt": "Jurumani Solutions Logo",
-      "link": "https://www.linkedin.com/company/jurumani/",
-      "description": "Developed 200+ production backend API endpoints in Python. Increased CI/CD test coverage to 100% by implementing automated tests across production services."
     }
   ],
   "certifications": [
